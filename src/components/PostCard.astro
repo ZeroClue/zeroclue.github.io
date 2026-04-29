@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  slug: string;
+  description?: string;
+}
+
+const { title, date, slug, description } = Astro.props;
+
+const formatted = date.toLocaleDateString('en-ZA', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<style>
+  .post-card { margin-bottom: 2.5rem; }
+  .post-card .meta { color: var(--text-muted); font-size: 0.8rem; margin: 0 0 0.3rem; }
+  .post-card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.3rem;
+  }
+  .post-card h2 a { text-decoration: none; }
+  .post-card h2 a:hover { opacity: 0.6; }
+  .post-card .desc { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+</style>
+
+<div class="post-card">
+  <p class="meta">{formatted}</p>
+  <h2><a href={`/blog/${slug}`}>{title}</a></h2>
+  {description && <p class="desc">{description}</p>}
+</div>

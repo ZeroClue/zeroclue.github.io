@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="About — ZeroClue"
+  description="Software architect. Building Kern, CoolMinds, and MFTPlus."
+>
+  <style>
+    .about { margin: 2.5rem 0; }
+    .about h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.75rem;
+    }
+    .about p { color: var(--text-muted); }
+    .ventures { margin-top: 2rem; }
+    .ventures h2 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+    }
+    .ventures ul { list-style: none; padding: 0; margin: 0; }
+    .ventures li { margin-bottom: 0.75rem; }
+    .ventures .desc { color: var(--text-muted); font-size: 0.875rem; }
+  </style>
+  <div class="about">
+    <h1>Armin Marxer</h1>
+    <p>Software solutions architect and engineer. Auto-didact. I build things — currently three of them.</p>
+    <p>This is where I write. No theme, no schedule. Technical deep-dives, founder notes, opinions I haven't been talked out of yet.</p>
+    <div class="ventures">
+      <h2>Ventures</h2>
+      <ul>
+        <li>
+          <a href="https://kern.web.za">Kern</a>
+          <span class="desc"> — AI-assisted web design for South African businesses</span>
+        </li>
+        <li>
+          <a href="https://coolminds.co.za">CoolMinds</a>
+          <span class="desc"> — Software engineering for founders and CTOs</span>
+        </li>
+        <li>
+          <a href="https://mftplus.co.za">MFTPlus</a>
+          <span class="desc"> — Managed file transfer infrastructure</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Base>
