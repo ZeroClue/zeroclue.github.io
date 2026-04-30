@@ -1,6 +1,6 @@
 ---
 title: "Where It All Began"
-date: 2026-04-29
+date: 2026-04-27
 description: "A SpectraVideo MSX, a cassette drive, and a black and white television. Everything I understand about computers traces back to that prompt."
 ---
 

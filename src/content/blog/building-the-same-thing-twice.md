@@ -1,6 +1,6 @@
 ---
 title: "Building the Same Thing Twice (On Purpose)"
-date: 2026-04-30
+date: 2026-04-29
 description: "MFTPlus v1 had nine containers and multiple compose files. Then I closed the laptop and sat on the couch. This is what changed."
 draft: false
 ---
