@@ -2,7 +2,7 @@
 title: "Git Etiquette, or: How Not to Be the Developer Everyone Dreads"
 date: 2026-04-30
 description: "Most git guides teach you the commands. This one is about the decisions that make collaborating with you bearable."
-draft: true
+draft: false
 ---
 
 I just set up a git workflow that would make a junior developer cry.

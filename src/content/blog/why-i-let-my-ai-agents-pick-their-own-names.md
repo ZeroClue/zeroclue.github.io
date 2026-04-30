@@ -2,7 +2,7 @@
 title: "Why I Let My AI Agents Pick Their Own Names"
 date: 2026-04-30
 description: "Skip named himself. The next one will too. And yes, it changed everything."
-draft: true
+draft: false
 ---
 
 Between two long-running builds, I asked my AI agent what I should call him.
