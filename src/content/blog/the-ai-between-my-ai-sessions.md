@@ -5,36 +5,40 @@ description: "There's an AI sitting between me and my AI coding sessions. This i
 draft: false
 ---
 
-Two windows. One is Hermes — NousResearch's Hermes agent, running in a TUI. The other holds two Claude Code sessions, each in its own pane. Hermes reads those panes. I talk to Hermes. Hermes interprets what I want, checks what the sessions are doing, and gives me a rundown before acting. Then it dispatches accordingly. The Claude Code sessions don't know about each other. They don't know about Hermes. They only know what Hermes tells them.
+I'm currently using an AI to give instructions to two other AIs.
+
+I'm aware of how that sounds.
 
 ---
 
-Tmux is what holds it together. Hermes runs in one window. The two Claude Code sessions run in separate panes of another window. When I ask Hermes what's happening, it reads the pane output directly — tmux commands capturing whatever's on screen — processes it, and gives me a rundown. When I give it a direction, it decides which session gets it and sends the appropriate command back into the right pane.
+The setup: Hermes — NousResearch's Hermes agent — runs in one tmux window as a TUI. Two Claude Code sessions run in another window, one per pane. I talk to Hermes. Hermes reads the panes, interprets what's happening, gives me a picture. When I tell it what I want next, it decides which session gets it and dispatches accordingly.
 
-None of this required exotic infrastructure. Tmux has been around for twenty years. The pane capture commands are basic. What's new is a model sitting in the middle, making sense of the output and deciding what to do with it.
+The Claude Code sessions don't know about each other. They don't know about Hermes. They only know what Hermes tells them.
+
+None of this required anything exotic. Tmux has been around for twenty years. Pane captures are basic. The new part is a model sitting in the middle, making sense of the output and deciding what to do with it.
 
 ---
 
-Working directly in Claude Code is like being a project manager who also writes all the tickets and sits next to every developer. You track context for each session separately, phrase things differently for each one depending on where they are, remember what you told Session A that Session B doesn't know yet. The altitude is low. You're in the details of communication, not just the work.
+Working directly across two Claude Code sessions means the overhead lives in your head. You track what each one knows. You phrase things differently depending on where they are. You remember what you told Session A that Session B doesn't know yet. You're simultaneously the director and the context file.
 
-With Hermes between me and the sessions, that changes. I say what I want to happen. Hermes figures out the state of each session, decides which one handles what, translates intent into instruction. The cognitive overhead of managing two sessions in parallel — keeping their contexts separate, phrasing carefully, context-switching constantly — moves to the middle layer.
+With Hermes in the middle, that shifts. I say what I want to happen. Hermes reads the current state, decides which session handles what, and translates intent into instruction.
 
 I'm operating on the problem. Hermes is operating on the sessions.
 
-It's a different kind of attention. I'm not sure yet whether it's better or just different.
+I didn't expect that distinction to feel as significant as it does.
 
 ---
 
-The chain is me → Hermes → Claude Code. The middle step isn't a router or a dispatcher in any mechanical sense. Hermes interprets. It reads what the sessions are saying, decides what matters, forms a picture, and passes that picture up to me. When I push something back down, it decides how to frame it for each session.
+The part I haven't resolved: Hermes isn't a router.
 
-That means something I say to Hermes arrives at Claude Code already transformed. Hermes's read of the session state is baked into the instruction. The Claude Code sessions are responding to Hermes's version of me, not to me directly.
+When I ask what's happening, Hermes doesn't give me a transcript. It gives me its read. When I push something back down, it decides how to frame it for each session. Something I say to Hermes arrives at Claude Code already transformed. The Claude Code sessions are responding to Hermes's version of what I meant.
 
-I don't know what that costs yet. Whether Hermes is adding something in translation or just losing less than I would by managing it myself — I can't tell from one day. There's a layer of interpretation I didn't have before, and that layer belongs to something that isn't me.
+I don't know yet what that costs. Whether Hermes is adding something in translation or just handling noise I'd have introduced anyway — I genuinely can't tell from one day. There's a layer of interpretation I didn't have before, and it isn't mine.
 
 ---
 
 I'm watching. That's all it is right now.
 
-The setup is working. The sessions run. The dispatching is happening. But the real questions — what gets preserved in translation, what gets dropped, whether operating at this remove is worth what you might lose by not being closer — those need more time to show themselves. You don't learn what a workflow is doing to your thinking on the first day. You learn it when something goes wrong, or when something works better than it should have. Part 2 is for when I know what I'm looking at.
+Though technically, Hermes is watching and giving me its read.
 
-Right now, I just know what I'm looking at.
+Which is maybe the whole question.
