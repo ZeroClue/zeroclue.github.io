@@ -4,10 +4,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  schema?: Record<string, any>;
 }
 
-const { title, description = 'Software architect. Building things. Writing here.' } = Astro.props;
+const { title, description = 'Software architect. Building things. Writing here.', ogImage, schema } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const defaultOgImage = new URL('/og-image.png', Astro.site).toString();
 ---
 
 <!doctype html>
@@ -26,6 +29,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage || defaultOgImage} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage || defaultOgImage} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     <title>{title}</title>
     <script>window.UMAMI_WEBSITE_ID = "dca26813-f0fc-4e02-b6c0-fd6fb8324174";</script>
     <script>

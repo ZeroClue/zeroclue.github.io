@@ -5,18 +5,36 @@ interface Props {
   title: string;
   date: Date;
   description?: string;
+  wordCount?: number;
+  ogImage?: string;
 }
 
-const { title, date, description } = Astro.props;
+const { title, date, description, wordCount = 1500, ogImage } = Astro.props;
 
 const formatted = date.toLocaleDateString('en-ZA', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  author: {
+    '@type': 'Person',
+    name: 'Armin Marxer',
+    url: 'https://zeroclue.dev',
+  },
+  datePublished: date.toISOString().split('T')[0],
+  wordCount: wordCount,
+  image: ogImage || new URL('/og-image.png', Astro.site).toString(),
+  url: Astro.url.toString(),
+};
 ---
 
-<Base title={`${title} — ZeroClue`} description={description}>
+<Base title={`${title} — ZeroClue`} description={description} ogImage={ogImage} schema={articleSchema}>
   <style>
     .post-header { margin: 2.5rem 0 2.5rem; }
     .post-title {

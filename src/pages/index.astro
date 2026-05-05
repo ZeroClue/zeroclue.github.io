@@ -7,7 +7,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Base title="ZeroClue">
+<Base title="ZeroClue" description="Armin Marxer — Software architect building Kern, CoolMinds, and MFTPlus. Writing on architecture, AI agents, and the tech behind three ventures.">
   <style>
     .intro { margin: 2.5rem 0 3rem; }
     .intro p { font-size: 1.05rem; color: var(--text-muted); margin: 0; }

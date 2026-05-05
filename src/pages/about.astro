@@ -1,10 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Armin Marxer',
+  url: 'https://zeroclue.dev',
+  sameAs: [
+    'https://github.com/ZeroClue',
+    'https://linkedin.com/in/arminmarxer',
+  ],
+  jobTitle: 'Software Solutions Architect',
+  description: 'Software architect. Building Kern, CoolMinds, and MFTPlus.',
+};
 ---
 
 <Base
   title="About — ZeroClue"
   description="Software architect. Building Kern, CoolMinds, and MFTPlus."
+  schema={personSchema}
 >
   <style>
     .about { margin: 2.5rem 0; }
