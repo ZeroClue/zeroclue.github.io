@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Privacy Policy — ZeroClue" description="How zeroclue.dev collects and uses anonymous analytics data.">
+  <style>
+    .page-header { margin-bottom: 3rem; }
+    .page-header .updated { font-size: 0.8125rem; color: var(--text-muted, #888); margin-bottom: 0.5rem; font-family: 'IBM Plex Mono', monospace; }
+    h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 0; }
+    h2 { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 2.5rem 0 0.75rem; }
+    p { margin-bottom: 1rem; line-height: 1.75; }
+    ul { margin: 0 0 1rem 1.25rem; }
+    li { margin-bottom: 0.4rem; line-height: 1.65; }
+    code { font-family: 'IBM Plex Mono', monospace; font-size: 0.85em; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 3px; }
+    a { text-decoration: underline; }
+  </style>
+
+  <div class="page-header">
+    <p class="updated">Last updated: May 2026</p>
+    <h1>Privacy Policy</h1>
+  </div>
+
+  <h2>Analytics</h2>
+  <p>This site uses <a href="https://umami.is" target="_blank" rel="noopener">Umami</a> — a privacy-first, open-source analytics tool. It collects no personal data and sets no cookies. Analytics only loads if you click Accept on the banner. If you click Reject, nothing is collected.</p>
+
+  <h2>What gets collected</h2>
+  <ul>
+    <li>Page URL visited</li>
+    <li>Referrer URL</li>
+    <li>Browser type and operating system</li>
+    <li>Device type (desktop, mobile, tablet)</li>
+    <li>Country — derived from your IP address; the IP itself is not stored</li>
+  </ul>
+
+  <h2>What does not get collected</h2>
+  <ul>
+    <li>Your name, email, or any identifying information</li>
+    <li>Cookies of any kind</li>
+    <li>Data that tracks you across other sites</li>
+  </ul>
+
+  <h2>Where data is stored</h2>
+  <p>Analytics data is stored on privately managed servers. It is not shared with any third party.</p>
+
+  <h2>Withdrawing consent</h2>
+  <p>Open your browser's developer tools (F12), navigate to <strong>Application → Local Storage → zeroclue.dev</strong>, and delete the <code>umami-consent</code> key. The banner will reappear on your next visit.</p>
+
+  <h2>Data retention</h2>
+  <p>Analytics data is retained for 12 months.</p>
+
+  <h2>Questions</h2>
+  <p>Contact via <a href="https://linkedin.com/in/arminmarxer" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://github.com/ZeroClue" target="_blank" rel="noopener">GitHub</a>.</p>
+</Base>
