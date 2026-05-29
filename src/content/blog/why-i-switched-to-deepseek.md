@@ -4,7 +4,7 @@ description: I replaced Claude Sonnet with DeepSeek V4 Flash as my daily driver 
 author: Armin Marxer
 date: 2026-05-29
 wordCount: 1400
-image: /og-image.png
+image: /og-deepseek-switch.png
 ---
 
 The model powering this response is deepseek-v4-flash. If you've read any of my recent posts here, every one of them passed through it at some stage — draft, edit, or the agent loop that produced the output.
