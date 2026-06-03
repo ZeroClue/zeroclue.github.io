@@ -6,10 +6,11 @@ interface Props {
   description?: string;
   ogImage?: string;
   schema?: Record<string, any>;
+  canonicalURL?: string;
 }
 
-const { title, description = 'Software architect. Building things. Writing here.', ogImage, schema } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description = 'Software architect. Building things. Writing here.', ogImage, schema, canonicalURL: canonicalURLProp } = Astro.props;
+const canonicalURL = canonicalURLProp ?? new URL(Astro.url.pathname, Astro.site);
 const defaultOgImage = new URL('/og-image.png', Astro.site).toString();
 ---
 

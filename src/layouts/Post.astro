@@ -7,9 +7,10 @@ interface Props {
   description?: string;
   wordCount?: number;
   ogImage?: string;
+  canonicalURL?: string;
 }
 
-const { title, date, description, wordCount = 1500, ogImage } = Astro.props;
+const { title, date, description, wordCount = 1500, ogImage, canonicalURL } = Astro.props;
 
 const formatted = date.toLocaleDateString('en-ZA', {
   year: 'numeric',
@@ -30,11 +31,11 @@ const articleSchema = {
   datePublished: date.toISOString().split('T')[0],
   wordCount: wordCount,
   image: ogImage || new URL('/og-image.png', Astro.site).toString(),
-  url: Astro.url.toString(),
+  url: canonicalURL ?? Astro.url.toString(),
 };
 ---
 
-<Base title={`${title} — ZeroClue`} description={description} ogImage={ogImage} schema={articleSchema}>
+<Base title={`${title} — ZeroClue`} description={description} ogImage={ogImage} schema={articleSchema} canonicalURL={canonicalURL}>
   <style>
     .post-header { margin: 2.5rem 0 2.5rem; }
     .post-title {

@@ -14,6 +14,6 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Post title={post.data.title} date={post.data.date} description={post.data.description}>
+<Post title={post.data.title} date={post.data.date} description={post.data.description} canonicalURL={post.data.canonicalURL}>
   <Content />
 </Post>
