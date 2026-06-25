@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Work — ZeroClue"
+  description="Projects built by Armin Marxer — live products, published tools, and historical systems."
+>
+  <style>
+    .work { margin: 2.5rem 0; }
+    .work h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.5rem;
+    }
+    .work .lead {
+      color: var(--text-muted);
+      margin: 0 0 3rem;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 3rem;
+    }
+    .project-list li {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+    .project-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .project-name a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .project-name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 0.6rem;
+    }
+    .project-stack {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      font-family: var(--font-mono);
+    }
+    .pending {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+  </style>
+
+  <div class="work">
+    <h1>Work</h1>
+    <p class="lead">Things I've built — live, pre-launch, and historical.</p>
+
+    <p class="section-label">Live</p>
+    <ul class="project-list">
+      <li>
+        <div class="project-header">
+          <span class="project-name"><a href="https://platform.kern.web.za">Rook</a></span>
+          <span class="project-meta">2024 – present</span>
+        </div>
+        <p class="project-desc">Production AI content quality gate. Detects 47+ AI writing patterns, enforces brand voice across multiple brands simultaneously. Paying users.</p>
+        <div class="project-stack">Next.js · TypeScript · Vercel · Clerk · Polar.sh · Neon PostgreSQL</div>
+      </li>
+      <li>
+        <div class="project-header">
+          <span class="project-name"><a href="https://www.npmjs.com/package/mcp-cache-proxy">mcp-cache-proxy</a></span>
+          <span class="project-meta">2025 · npm · v0.5.0</span>
+        </div>
+        <p class="project-desc">MCP gateway that lazy-loads servers on demand. Idle timeout cleanup, concurrent load guard. Reduced my production context window from ~24k to ~10k tokens.</p>
+        <div class="project-stack">TypeScript · Node.js · SQLite</div>
+      </li>
+      <li>
+        <div class="project-header">
+          <span class="project-name"><a href="https://p2p-call.kern.web.za">p2p-call</a></span>
+          <span class="project-meta">2024</span>
+        </div>
+        <p class="project-desc">Browser-based peer-to-peer video and audio calling. No server relay — direct WebRTC connection.</p>
+        <div class="project-stack">WebRTC · JavaScript</div>
+      </li>
+      <li>
+        <div class="project-header">
+          <span class="project-name"><a href="https://crypto-gen.kern.web.za">crypto-gen</a></span>
+          <span class="project-meta">2024</span>
+        </div>
+        <p class="project-desc">Cryptographic key generator. Runs client-side — keys never leave the browser.</p>
+        <div class="project-stack">JavaScript · Web Crypto API</div>
+      </li>
+    </ul>
+
+    <p class="section-label">Pre-launch</p>
+    <ul class="project-list">
+      <li>
+        <div class="project-header">
+          <span class="project-name"><a href="https://mftplus.co.za">MFTPlus</a></span>
+          <span class="project-meta">2024 – present</span>
+        </div>
+        <p class="project-desc">Cloud-native SaaS Managed File Transfer platform. Scheduled jobs, AES-256 encryption, cryptographic audit trail using a hash chain design, multi-tenancy, CLI-native agent. Built on direct experience running enterprise MFT at bank scale for over a decade.</p>
+        <div class="project-stack">TypeScript · Express · React · Neon PostgreSQL · Polar.sh · Tauri · Go</div>
+      </li>
+    </ul>
+
+    <p class="section-label">Historical</p>
+    <ul class="project-list">
+      <li>
+        <div class="project-header">
+          <span class="project-name">nuMotusDirect</span>
+          <span class="project-meta">2008 – 2022</span>
+        </div>
+        <p class="project-desc">Commercial Managed File Transfer platform I designed, built, and operated at a major South African bank for over a decade. 52-project .NET Framework SOA — distributed agent architecture, PGP encryption, multi-layer authentication, Quartz.NET-scheduled job engine, real-time web dashboard, 25+ standalone operational utilities.</p>
+        <div class="project-stack">C# · .NET · WCF · Entity Framework · ASP.NET MVC · Quartz.NET · BouncyCastle · SQL Server · RabbitMQ</div>
+        <div class="pending">Write-up in progress.</div>
+      </li>
+      <li>
+        <div class="project-header">
+          <span class="project-name">nuAgent</span>
+          <span class="project-meta">2015 – 2022</span>
+        </div>
+        <p class="project-desc">Standalone edge agent for nuMotusDirect, deployed to client sites across Windows, Linux, and macOS. SSH-tunnelled RabbitMQ telemetry — outbound SSH only, no inbound firewall rules at client sites. Zero-touch RSA provisioning: the agent generates its own keypair on first run, credentials stored so only that specific instance can decrypt them. AES file encryption with a paired-file integrity protocol ensuring atomic, verified delivery.</p>
+        <div class="project-stack">Java 11 · Maven · NanoHTTPD · RabbitMQ · JSch · Chilkat</div>
+        <div class="pending">Write-up in progress.</div>
+      </li>
+    </ul>
+  </div>
+</Base>
